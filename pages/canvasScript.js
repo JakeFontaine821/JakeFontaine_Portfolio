@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 let maxWidth = canvas.width;
 let maxHeight = canvas.height;
 
-let interval = 60/1000;
+let interval = 1000/240; // 240 times a second
 
 /*****************************************************************************************************************/
 /*****                                         Resizing Canvas                                               *****/
