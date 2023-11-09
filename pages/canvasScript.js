@@ -11,6 +11,9 @@ let interval = 60/1000;
 function ResizeCanvas(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
+    maxWidth = canvas.width;
+    maxHeight = canvas.height;
 }
 ResizeCanvas();
 
@@ -135,7 +138,7 @@ function Grid() {
     this.CreateRandomNodes = function() {
         for (let i = 0; i < this.startingNodeCount; i++) {
             let newX = randomRange(maxWidth - 20, 20);
-            let newY = randomRange(maxHeight - 200, 20);
+            let newY = randomRange(maxHeight - 20, 20);
             this.StartingNodes( newX, newY);
 
             this.nodeCount += 1;
