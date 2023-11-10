@@ -4,7 +4,7 @@ const line_delay = 10;
 let timer = 0;
 let lines_typing = 1;
 const interval = 1000/60; // 60 times a second
-const page_load_delay = 200;
+const page_load_delay = 100;
 const number_of_lines = 7;
 
 function LineController() {
