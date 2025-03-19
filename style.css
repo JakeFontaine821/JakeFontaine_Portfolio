@@ -336,6 +336,7 @@ article div{
     display: flex;
     flex-direction: row;
     width: calc(100% - 60px);
+    gap: 5px;
 }
 
 .page-image-section .project-image{
@@ -350,9 +351,9 @@ article div{
     background-size: cover;
 }
 
-.with-margin{
+/* .with-margin{
     margin-right: 5px;
-}
+} */
 
 /*****************************************************************/
 /*****                   About Me section                    *****/
@@ -393,63 +394,6 @@ article div{
 
 .about-subsection .about-text{
     width: 100%;
-}
-
-/*****************************************************************/
-/*****                    Resume section                     *****/
-.resume_page{
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.resume-container{
-    width: 55%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.resume-container hr{
-    border-top: 2px solid var(--hover-text);
-    border-style: inset;
-}
-
-.resume-header{
-    width: 100%;
-    text-align: center;
-}
-
-.resume-subsection{
-    width: 100%;
-}
-
-/*****************************************************************/
-/*****                     Blob section                      *****/
-.blob{
-    background-color: var(--hover-text);
-    height: 500px;
-    aspect-ratio: 1;
-    position: fixed;
-    /* left: 50%; */
-    /* top: 50%; */
-    translate: -50% -50%;
-    border-radius: 50%;
-    z-index: -2;
-}
-
-.blur{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
-    backdrop-filter: blur(200px);
 }
 
 /*****************************************************************/

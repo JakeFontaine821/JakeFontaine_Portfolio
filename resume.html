@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jake Fontaine - Resume</title>
 
-    <!--Link to stylesheet-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="colors.css">
+    <style>
+        .resume-page{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .resume-page .resume-subsection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            width: 100%;
+            padding: 10px 0px;
+            cursor: pointer;
+        }
+
+        .resume-page .resume-subsection .header{
+            font-size: 28px;
+        }
+
+        .resume-page .resume-subsection .sub-header{
+            font-size: 18px;
+        }
+
+        .resume-page .resume-subsection .section-header{
+            border-bottom: 1px solid var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .resume-page .resume-subsection > :not(.header, .sub-header){
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: flex-start; */
+            align-self: start;
+        }
+    </style>
 
     <!--Link to use logos from fontawesome-->
     <script src="https://kit.fontawesome.com/d995b789e7.js" crossorigin="anonymous"></script>
@@ -25,58 +64,107 @@
         </div>
     </nav>
 
-    <div class="resume_page">
-        <div class="resume-container background-shadow">
-            <div class="resume-header">
-                <h1>Jake Fontaine</h1>
-                <h4 style="line-height: .6;">Fontaine.JakeA@gmail.com</h4>
-            </div>
-            <div class="resume-subsection">
-                <h3 class="kindasmaller">Qualifications</h3>
-                <hr>
-                <ul>
-                    <li class="kindabig">C#, C++, Python, JavaScript, HTML and CSS, Java, SQL, Swift </li>
-                    <li class="kindabig">Databases like MongoDB and MySQL</li>
-                    <li class="kindabig">Experience with version control systems like Git and Perforce</li>
-                    <li class="kindabig">Strong analytical and problem solving skills</li>
-                    <li class="kindabig">Microsoft Office Suite: Word, Excel, PowerPoint</li>
-                    <li class="kindabig">Excellent written and verbal communication skills</li>
-                    <li class="kindabig">Passion for learning and applying new training and new technologies</li>
-                </ul>
-            </div>
-            <div class="resume-subsection">
-                <h3 class="kindasmaller">Education</h3>
-                <hr>
-                <p class="notasbig">New England Institute of Technology, East Greenwich, RI <br>
-                   Bachelor’s Degree in Development and Simulation Programming – 09/2023 <br>
-                   Associate’s Degree in Development and Simulation Programming – 03/2022 <br>
-                   GPA: 3.32
-                </p>
-            </div>
-            <div class="resume-subsection">
-                <h3 class="kindasmaller">Projects</h3>
-                <hr>
-                <h4 class="kindasmaller">Machine learning data analysis.</h4>
-                <ul>
-                    <li class="kindabig">Independent project to create a data analysis machine learning program. Utilized the machine learning library, Scikit, to analyze a data set and make predictions with future given data.</li>
-                    <li class="kindabig"> Used graphing libraries like Matplotlib and Seaborn to give visual representations of the data set.</li>
-                </ul>
-                <h4 class="kindasmaller">Python Computer Vision.</h4>
-                <ul>
-                    <li class="kindabig">Independent project to utilize Video Capture and Screen Capture. Gaining skills using OpenCV for object detection 
-                        and creating functional programs.</li>
-                </ul>
-                <h4 class="kindasmaller">Team based project to create a 2D side scroller game.</h4>
-                <ul>
-                    <li class="kindabig">I served as the Lead Programmer for the project. I coded all the AI for the project as well as physics.</li>
-                    <li class="kindabig"> When my team member did not fulfill responsibilities, I stepped up and took over by creating all the art assets for 
-                        the game. I was able to hit key benchmarks for the project and earned an A-.</li>
-                    <li class="kindabig">I presented the work in front of two instructors and classmates and gained good feedback.</li>
-                </ul>
-            </div>
+    <div class="resume-page josefin-regular">
+        <div class="resume-subsection">
+            <div class="header josefin-bold">Jake Fontaine</div>
+            <div class="sub-header josefin-medium">774.218.6316 | Fontaine.JakeA@gmail.com</div>
+        </div>
+        <div class="resume-subsection">
+            <div class="section-header">Qualifications</div>
+            <div>Experience in both team and self-driven environments working on programming aspects of projects. Adaptable, organized, and proficient in fast paced environments while communicating clearly with team members.</div>
+            <ul>
+                <li>JavaScript, HTML and CSS, Python, Java, C#, C++, SQL, Swift</li>
+                <li>Experienced in developing RESTful APIs and backend services with Node.js</li>
+                <li>Proficient with version control systems - Git</li>
+                <li>Microsoft Office Suite: Word, Excel, PowerPoint</li>
+                <li>Excellent written and verbal communication skills</li>
+                <li>Passion for learning and applying new training and new technologies</li>
+            </ul>
+        </div>
+        <div class="resume-subsection">
+            <div class="section-header">Education</div>
+            <div>New England Institute of Technology, East Greenwich, RI</div>
+            <div>Bachelors in Game Development and Simulation Programming</div>
+        </div>
+        <div class="resume-subsection">
+            <div class="section-header">Work Experience</div>
+            <div>Seacorp, Middletown, RI</div>
+            <div>Software Engineer I | March 2024 - Present</div>
+            <ul>
+                <li>Work on classified DoD projects under an active Secret clearance.</li>
+                <li>Awarded the Spot award in recognition of outstanding performance and exceeding expectations.</li>
+                <li>Diagnose and resolve complex bugs and issues, enhancing system stability and user satisfaction.</li>
+                <li>Assist junior team members and interns with code reviews, knowledge sharing, and onboarding processes.</li>
+                <li>Write clean, maintainable code and conduct code reviews ensuring high software quality.</li>
+            </ul>
+            <div>New England Institute of Technology, East Greenwich, RI</div>
+            <div>Fitness Associate | August 2022 – September 2023</div>
+            <ul>
+                <li>Provided strong customer service, and checked guests into the facility.</li>
+                <li>Ensured a clean, safe environment following health protocol.</li>
+            </ul>
+            <div>Pro-line Engineering, Swansea, MA</div>
+            <div>Land Surveyor | May - September 2019</div>
+            <ul>
+                <li>Directed staff performing land surveyor duties to determine boundaries and ownership for over 600 clients.</li>
+                <li>Conducted thorough research on land ownership and documentation while adhering to tight deadlines.</li>
+            </ul>
         </div>
     </div>
 
-    <script src="textTyping.js"></script>
+    <script>
+        let list_element = document.querySelectorAll(".resume-subsection li");
+
+        const line_delay = 6;
+        let timer = 0;
+        let lines_typing = 1;
+        const interval = 1000/60; // 60 times a second
+        const page_load_delay = 100;
+
+        function LineController() {
+            this.line = 0;
+            this.hold_text = null;
+            this.current_letter = 0;
+
+            this.SetLine = function(_line) {
+                this.line = _line;
+
+                this.hold_text = list_element[_line].innerHTML;
+                list_element[_line].innerHTML = "";
+            };
+
+            this.AddLetter = function() {
+                if(this.current_letter < this.hold_text.length) {
+                    list_element[this.line].innerHTML += this.hold_text[this.current_letter];
+                    this.current_letter += 1;
+                }
+            };
+        };
+
+        let line_controllers = []
+        for (let i = 0; i < list_element.length; i++) {
+            let newController = new LineController();
+            newController.SetLine(i);
+
+            line_controllers.push(newController);
+        }
+
+        function Animate() {
+            timer += 1;
+
+            if (lines_typing < list_element.length && timer >= line_delay) {
+                lines_typing += 1;
+                timer -= line_delay;
+            }
+
+            for (let i = 0; i < lines_typing; i++) {
+                line_controllers[i].AddLetter();        
+            }
+        };
+
+        setTimeout(() => {
+            setInterval(Animate, interval);
+        }, page_load_delay);
+    </script>
 </body>
 </html>
