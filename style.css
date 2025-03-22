@@ -351,51 +351,6 @@ article div{
     background-size: cover;
 }
 
-/* .with-margin{
-    margin-right: 5px;
-} */
-
-/*****************************************************************/
-/*****                   About Me section                    *****/
-.about-page{
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-}
-
-.about-container{
-    width: 70%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.about-container .about-subsection{
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-}
-
-.about-subsection .my-picture{
-    width: 80%;
-}
-
-.about-subsection .about-text{
-    width: 100%;
-}
-
 /*****************************************************************/
 /*****                     MISC section                      *****/
 

@@ -6,7 +6,68 @@
     <title>Jake Fontaine - About Me</title>
 
     <!--Link to stylesheet-->
+    <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-page{
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .about-container{
+            width: 70%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .about-container .about-subsection{
+            width: 50%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding: 10px;
+        }
+
+        .about-subsection .my-picture{
+            width: 80%;
+        }
+
+        .about-subsection .about-text{
+            width: 100%;
+        }
+
+        .highlight{
+            color: var(--hover-text);
+            cursor: pointer;
+        }
+
+        .backdrop{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -2;
+        }
+
+        .cell{
+            position: absolute;
+            width: 25px;
+            aspect-ratio: 1;
+            transition: background-color 2s;
+        }
+    </style>
 
     <!--Link to use logos from fontawesome-->
     <script src="https://kit.fontawesome.com/d995b789e7.js" crossorigin="anonymous"></script>
@@ -36,13 +97,42 @@
                         <br><br>
                     Outside of programming I enjoy being active, playing basketball and golf as well as working out. I believe staying active helps me be a better programmer because stepping away and clearing my head has helped solved problems numerous times.
                     </p>
-                </div>                
+                </div>
             </div>
             <div class="about-subsection">
                 <img src="images/Myself.JPEG" alt="Picture-of-Myself" class="my-picture">
             </div>
         </div>
     </div>
+
+    <div class="backdrop"></div>
+
+    <script>
+        const backdrop = document.querySelector('.backdrop');
+
+        const numberOfCellsWide = Math.ceil(document.documentElement.clientWidth / 25);
+        const numberOfCellsTall = Math.ceil(document.documentElement.clientHeight / 25);
+        const cells = Array.from(new Array(numberOfCellsTall), () => { return new Array(numberOfCellsWide); });
+        for (let i = 0; i < numberOfCellsTall; i++) {
+            for (let j = 0; j < numberOfCellsWide; j++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.style.left = `calc(${j} * 25px)`;
+                cell.style.top = `calc(${i} * 25px)`;
+
+                cells[i][j] = cell;
+                backdrop.appendChild(cell);
+            }
+        }
+
+        document.addEventListener('mousemove', e => {
+            const cellXIndex = Math.floor(e.clientX / 25);
+            const cellYIndex = Math.floor(e.clientY / 25);
+            cells[cellYIndex][cellXIndex].style.backgroundColor = 'var(--accent)';
+
+            setTimeout(() => cells[cellYIndex][cellXIndex].style.backgroundColor = 'transparent', 1000);
+        });
+    </script>
 
     <!-- <script src="mouseSpotlight.js"></script> -->
 </body>
