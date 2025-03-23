@@ -1,6 +1,6 @@
-const body = document.querySelector("body");
+const body = document.querySelector('body');
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
     CloseAllImages();
 })
 
@@ -10,20 +10,20 @@ const page_transition_duration = 1500,
       image_transition_time = 400,
       start_cycle_again = 15000;
 
-const background = body.querySelector(".scrolling-background");
+const background = body.querySelector('.scrolling-background');
 /*****************************************************************************************************************/
 /*****                                   Scrolling through articles                                          *****/
 /*****************************************************************************************************************/
-const project_btns = body.querySelectorAll(".project_btn");
+const project_btns = body.querySelectorAll('.project_btn');
 
 let current_project = 0;
 
 // Run the animation on load of website. First animation always jumps instead of sliding, easy fix is to call first animation on load.
-background.animate({left: "0"}, {duration: 1000, fill: "forwards", easing: "ease"});
+background.animate({left: '0'}, {duration: 1000, fill: 'forwards', easing: 'ease'});
 
 for (let i = 0; i < project_btns.length; i++)
 {
-    project_btns[i].addEventListener("click", () =>{        
+    project_btns[i].addEventListener('click', () =>{        
 
         if(i == current_project){
             return;
@@ -33,7 +33,7 @@ for (let i = 0; i < project_btns.length; i++)
         const distance = i === 0 ? `0px` : `-${i}00vw`;
         background.animate(
             { left: distance },
-            { duration: page_transition_duration, fill: "forwards", easing: "ease" }
+            { duration: page_transition_duration, fill: 'forwards', easing: 'ease' }
         );
 
         current_project = i;
@@ -50,7 +50,7 @@ for (let i = 0; i < project_btns.length; i++)
 /*****************************************************************************************************************/
 /*****                                  Article Image Button Section                                         *****/
 /*****************************************************************************************************************/
-const image_buttons = background.querySelectorAll(".image-button-front");
+const image_buttons = background.querySelectorAll('.image-button-front');
 
 function leftbutton(){
     cycle.WaitToStartCycle();
@@ -61,10 +61,10 @@ function leftbutton(){
 
 for (let i = 0; i < image_buttons.length; i++) {
     if(i % 2 == 0) {    /***** Left Buttons *****/
-        image_buttons[i].addEventListener("click", leftbutton);
+        image_buttons[i].addEventListener('click', leftbutton);
     }
     else {              /***** Right Buttons *****/
-        image_buttons[i].addEventListener("click", () => {
+        image_buttons[i].addEventListener('click', () => {
             cycle.WaitToStartCycle();
 
             ImageCycle();
@@ -75,9 +75,9 @@ for (let i = 0; i < image_buttons.length; i++) {
 /*****************************************************************************************************************/
 /*****                                  Article Image Cycle Section                                          *****/
 /*****************************************************************************************************************/
-const articles = background.querySelectorAll("article"),
-      image_starting_width = articles[0].querySelector(".project-image").offsetWidth,
-      image_area = articles[0].querySelector(".page-image-section")
+const articles = background.querySelectorAll('article'),
+      image_starting_width = articles[0].querySelector('.project-image').offsetWidth,
+      image_area = articles[0].querySelector('.page-image-section')
 
 let current_image = 0;
 
@@ -122,7 +122,7 @@ function ImageCycleClass(){
 }
 
 function ImageCycle(){
-    let project_images = articles[current_project].querySelectorAll(".project-image"),
+    let project_images = articles[current_project].querySelectorAll('.project-image'),
         usable_area = image_area.offsetWidth - 60; // Because of 20px padding on either side
 
     usable_area -= (((project_images.length - 1) * image_starting_width) + ((project_images.length - 1) * 5)) // Account for other buttons
@@ -146,32 +146,32 @@ function ImageCycle(){
 }
 
 function OpenImage(_projectImage, _useableArea) {
-    _projectImage.style.backgroundSize = "contain";
+    _projectImage.style.backgroundSize = 'contain';
     _projectImage.animate(
         {
             width: `${_useableArea}px`,
-            boxShadow: "-8px 8px 15px black" 
+            boxShadow: '-8px 8px 15px black' 
         },
-        { duration: image_transition_time, fill: "forwards", easing: "ease-out" }
+        { duration: image_transition_time, fill: 'forwards', easing: 'ease-out' }
     );
 }
 
 function CloseImage(_projectImage) {
-    _projectImage.style.backgroundSize = "cover";
+    _projectImage.style.backgroundSize = 'cover';
     _projectImage.animate(
         { 
             width: `${image_starting_width}px`,
-            boxShadow: "0px 0px 0px black" 
+            boxShadow: '0px 0px 0px black' 
         },
-        { duration: image_transition_time, fill: "forwards", easing: "ease-out" }
+        { duration: image_transition_time, fill: 'forwards', easing: 'ease-out' }
     );
 }
 
 function CloseAllImages() {
-    const articles = background.querySelectorAll("article");
+    const articles = background.querySelectorAll('article');
 
     for (let i = 0; i < articles.length; i++) {
-        project_images = articles[i].querySelectorAll(".project-image");
+        project_images = articles[i].querySelectorAll('.project-image');
 
         for (let j = 0; j < project_images.length; j++) {
             CloseImage(project_images[j]);
@@ -183,13 +183,13 @@ function CloseAllImages() {
 /*****                               Setting Image Background Section                                        *****/
 /*****************************************************************************************************************/
 for (let j = 0; j < articles.length; j++) {
-    const image_frames = articles[j].querySelectorAll(".project-image");
+    const image_frames = articles[j].querySelectorAll('.project-image');
     const projectTitle = articles[j].getAttribute('projecttitle');
     for (let i = 0; i < image_frames.length; i++) {
-        image_frames[i].style.backgroundColor = "black";
+        image_frames[i].style.backgroundColor = 'black';
         image_frames[i].style.backgroundImage = `url('images/${projectTitle}_img${i}.jpg')`;
-        image_frames[i].style.backgroundPosition = "center";
-        image_frames[i].style.backgroundSize = "cover";
-        image_frames[i].style.backgroundRepeat = "no-repeat";
+        image_frames[i].style.backgroundPosition = 'center';
+        image_frames[i].style.backgroundSize = 'cover';
+        image_frames[i].style.backgroundRepeat = 'no-repeat';
     }
 }
