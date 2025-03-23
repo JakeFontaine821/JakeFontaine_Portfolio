@@ -182,12 +182,12 @@ function CloseAllImages() {
 /*****************************************************************************************************************/
 /*****                               Setting Image Background Section                                        *****/
 /*****************************************************************************************************************/
-const project_img_count = [2, 5, 3, 2];
-for (let j = 0; j < project_img_count.length; j++) {
+for (let j = 0; j < articles.length; j++) {
     const image_frames = articles[j].querySelectorAll(".project-image");
-    for (let i = 0; i < project_img_count[j]; i++) {
+    const projectTitle = articles[j].getAttribute('projecttitle');
+    for (let i = 0; i < image_frames.length; i++) {
         image_frames[i].style.backgroundColor = "black";
-        image_frames[i].style.backgroundImage = `url('images/Project${j}_img${i}.jpg')`;
+        image_frames[i].style.backgroundImage = `url('images/${projectTitle}_img${i}.jpg')`;
         image_frames[i].style.backgroundPosition = "center";
         image_frames[i].style.backgroundSize = "cover";
         image_frames[i].style.backgroundRepeat = "no-repeat";
