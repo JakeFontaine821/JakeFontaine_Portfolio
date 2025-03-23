@@ -182,7 +182,7 @@ function CloseAllImages() {
 /*****************************************************************************************************************/
 /*****                               Setting Image Background Section                                        *****/
 /*****************************************************************************************************************/
-const project_img_count = [5, 2, 3, 2]
+const project_img_count = [2, 5, 3, 2];
 for (let j = 0; j < project_img_count.length; j++) {
     const image_frames = articles[j].querySelectorAll(".project-image");
     for (let i = 0; i < project_img_count[j]; i++) {
